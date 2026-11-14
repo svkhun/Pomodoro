@@ -4,7 +4,7 @@ A browser-local Pomodoro timer for Windows, macOS and mobile browsers. The Chris
 
 ## Run
 
-Use Node.js 22.13+ or Node.js 24 and npm. In the project directory, run:
+Use Node.js 24 and npm. In the project directory, run:
 
 ```powershell
 npm install
@@ -12,6 +12,17 @@ npm run dev
 ```
 
 Open the local address printed by Vite. Run `npm run build` for TypeScript checks and a production bundle in `dist/`. Run `npm run preview` to serve that bundle and `npm test` for the clock regression tests.
+
+## Deploy on Vercel
+
+1. In Vercel, create a new project and import `svkhun/Pomodoro` from GitHub.
+2. Use the repository root as Root Directory and `main` as the production branch.
+3. The tracked `vercel.json` selects Vite, installs with `npm ci`, builds with `npm run build`, and serves `dist`. The package engine selects Node.js 24.
+4. Deploy. This browser-local app requires no environment variables or backend.
+
+Vercel can redeploy subsequent pushes to the connected branch. Daily stats and settings belong to each browser origin, so a new deployment domain starts with its own stored data.
+
+Build configuration follows the [Vercel project configuration reference](https://vercel.com/docs/project-configuration).
 
 ## Christmas concepts
 
